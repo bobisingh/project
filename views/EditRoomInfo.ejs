@@ -1,0 +1,31 @@
+<% layout("./layouts/boilerplate") %>
+
+<body>
+<div class="main col-8 mx-auto p-2">
+    <h1 class="mb-6 mt-3 fs-1">Edit Your Blog</h1>
+
+    <form method="POST" action="/Rooms/<%= roomInfo._id %>?_method=PUT" novalidate class="needs-validation" >
+        <div class="mb-3">
+        <label for="RoomName" class="form-label">Blog title</label>
+        <input class="form-control" type="text" name="room[RoomName]" placeholder="Enter Blog Title " value="<%=roomInfo.RoomName %>" required >
+        <div class="invalid-feedback">Please Enter blog title</div>
+        </div>
+
+        <div class="mb-3">
+        <label for="Description" class="form-label">Description</label>
+        <textarea class="form-control" name="room[desc]" placeholder="Enter Blog description" required ><%=roomInfo.desc %></textarea>
+        <div class="invalid-feedback">Please Enter blog Description</div>
+        </div>
+
+        <div class="mb-3">
+        <label for="Image" class="form-label">Image Link</label>
+        <input class="form-control" type="text" name="room[MainImage]" placeholder="Enter Blog Image " value="<%=roomInfo.MainImage %>" required>
+        <div class="invalid-feedback">Please Enter Image URL</div>
+        </div>
+        
+
+        <button class="btn btn-success edit-btn">SAVE</button>
+    </form>
+</div>
+
+</body>

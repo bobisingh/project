@@ -1,0 +1,31 @@
+<% layout("./layouts/boilerplate") %>
+
+
+<body class="col-10 mx-auto p-2">
+    <h1><%= success %></h1>
+
+    <h1 class="mb-3 fs-1">All blogs</h1>
+
+    <div>
+    <form  method="GET" action="/Rooms/new">
+        <button class="btn btn-outline-primary" > Add new blog</button>
+    </form>
+    </div>
+
+    <div class="mt-6 row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+       <% for(let Room of Rooms){ %>
+        <a href="/Rooms/<%= Room._id %>">
+
+            <div class="card mt-5 col mx-1" >
+                <img src="<%= Room.MainImage %>" class="card-img-top" alt="..." style="height: 20rem !important;" >
+                <div class="card-body mx-3">
+                    <h5 class="card-title fs-5 mt-2"><%= Room.RoomName %></h5>
+                    <p class="card-text fs-6 "><%= Room.desc %></p>
+                </div>
+              </div>
+        </a>
+       <% } %>
+    </div>
+
+
+</body>

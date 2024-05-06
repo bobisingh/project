@@ -1,0 +1,30 @@
+<% layout("./layouts/boilerplate") %>
+
+<body class="col-8 mx-auto p-2">
+
+    <h1 class="mb-6 mt-3 fs-1">Add a New Blog</h1>
+
+    <form method="POST" action="/Rooms" novalidate class="needs-validation">
+
+        <div class="mb-3">
+            <label for="RoomName" class="form-label">Enter Blog Title</label>
+            <input class="form-control" type="text" name="room[RoomName]" placeholder="Title" required>
+            <div class="invalid-feedback">Please Enter Title Name.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="desc" class="form-label">Write your blog</label>
+            <textarea class="form-control" name="room[desc]" placeholder="Enter Blog" required></textarea>
+            <div class="invalid-feedback">Please Enter Event Description.</div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="Image" class="form-label">Image Link</label>
+            <input class="form-control" type="text" name="room[MainImage]" placeholder="Enter blog Image" required>
+            <div class="invalid-feedback">Please choose image</div>
+        </div>
+
+        <button class="btn btn-outline-secondary">ADD</button>
+    </form>
+
+</body>
