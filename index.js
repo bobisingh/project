@@ -15,7 +15,7 @@ const Image=require('./Models/Images');
 
 
 
-const MONGO_URL="mongodb://127.0.0.1:27017/MemoryHub";
+const MONGO_URL="mongodb+srv://bobisinghcs20:o4ZbxrfthdhUDmXB@cluster0.mvkqpgg.mongodb.net/MemoryHub";
 
 async function main(){
     await mongoose.connect(MONGO_URL);
